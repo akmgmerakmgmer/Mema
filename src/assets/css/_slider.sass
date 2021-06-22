@@ -1,0 +1,22 @@
+.slider-container
+    .slider-image
+        border-radius: 50%
+        height: 120px
+        width: 120px
+        display: inline !important
+        object-fit: cover
+    .slider-paragraph
+        display: inline-block
+        width: 50%   
+        @media (max-width: 575.98px)
+            width: 90%
+        @media (min-width: 576px) and (max-width: 767.98px)
+            width: 85%
+        @media (min-width: 768px) and (max-width: 991.98px) 
+            width: 70%
+        @media (min-width: 992px) and (max-width: 1199.98px)
+            width: 65%
+.slick-dots li button::before
+    color: $main-color !important
+    @include  transition(all, 0.3s, ease-in-out)
+    font-size: 12px !important

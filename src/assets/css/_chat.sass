@@ -1,0 +1,55 @@
+.chat-container
+    .button-container
+        display: inline-flex 
+        justify-content: center
+        background: $main-color
+        text-align: center
+        padding: 10px 30px
+        border-radius: 5px
+        img
+            width: 30px !important
+            height: 30px !important
+        .signin
+            font-weight: 500
+            letter-spacing: 2px
+            color: white 
+            border: none
+            background: transparent
+            margin-left: 10px
+    .signout-button
+        background: $main-color
+        color: white
+        border: 1px solid $main-color
+        border-radius: 5px
+        padding: 10px 30px
+        font-weight: 500
+        letter-spacing: 2px
+    form
+        input
+            background: transparent
+            border: none
+            outline: none
+            border-bottom: 1px solid rgba(255, 255, 255, .4)
+        .chat-button
+            padding: 10px 30px
+            border-radius: 5px
+            border: 2px solid $main-color
+    /*.received
+        align-items: end
+        justify-content: flex-end*/
+    .sent
+        display: flex
+        align-items: end
+        height: 6.9vh
+        width: 100%
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2)
+        margin-top: 15px
+        img
+            border-radius: 50%
+            width: 35px
+            height: 35px
+            object-fit: cover
+        p
+            align-self: flex-end
+            color: white
+            margin-left: 8px

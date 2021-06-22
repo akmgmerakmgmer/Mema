@@ -1,0 +1,51 @@
+.footer1
+    color: rgba(255, 255, 255, 0.6)
+    .padding-right
+        padding-right: 3%
+        @media (max-width: 575.98px)
+            padding-left: 40px
+        @media (min-width: 576px) and (max-width: 767.98px)
+            padding-left: 40px
+        @media (min-width: 768px) and (max-width: 991.98px) 
+            padding-left: 40px
+    .padding-left
+        padding-left: 7%
+        margin-top: 5px
+        @media (max-width: 575.98px)
+            padding-left: 40px
+        @media (min-width: 576px) and (max-width: 767.98px)
+            padding-left: 40px
+        @media (min-width: 768px) and (max-width: 991.98px) 
+            padding-left: 40px
+    p
+        font-weight: 600
+        padding-right: 5%
+    h6
+        font-size: 38px
+        font-weight: 900
+        @media (max-width: 575.98px)
+            font-size: 30px
+        @media (min-width: 576px) and (max-width: 767.98px)
+            font-size: 34px
+    .icons-container
+        padding-right: 4%
+        @media (max-width: 575.98px)
+            padding-left: 30px
+        @media (min-width: 576px) and (max-width: 767.98px)
+            padding-left: 30px
+        @media (min-width: 992px) and (max-width: 1199.98px)
+            padding-right: 0%
+        .icons
+            border: 2px solid rgba(255, 255, 255, 0.6)
+            border-radius: 50%
+            padding: 15px
+            @include  transition(all, 0.3s, ease-in-out)
+            cursor: pointer
+            &:hover
+                background: $main-color
+                transform: translateY(-5px)
+                border: 2px solid $main-color
+                color: white
+            svg
+                width: 25px
+                height: 25px
