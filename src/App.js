@@ -1,6 +1,12 @@
 import './App.css';
 import 'hover.css'
+import 'bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import 'animate.css'
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import '../src/assets/css/style.css'
+import WOW from 'wowjs'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbars/Navbar1'
@@ -9,6 +15,8 @@ import Services from './pages/Services'
 import Chat from './pages/Chat'
 import Axios from './pages/Axios'
 import Contact from './pages/Contact'
+import FullPageLoading from './components/Loadings/FullPageLoading';
+import { useEffect } from 'react';
 const theme = createMuiTheme({
   palette:{
     primary:{
@@ -31,10 +39,14 @@ const theme = createMuiTheme({
 })
 
 function App() {
-  
+  useEffect(()=>{
+    new WOW.WOW({
+    }).init();
+  },[])
   return(
     <Router>
       <ThemeProvider theme={theme}>
+      <FullPageLoading>
         <Navbar className="h-100">
           <Switch>
               <Route exact path="/">
@@ -54,6 +66,7 @@ function App() {
               </Route>
           </Switch>
         </Navbar>
+        </FullPageLoading>
       </ThemeProvider>
     </Router>
   )

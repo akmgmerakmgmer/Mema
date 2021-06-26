@@ -7,19 +7,23 @@ const Grid2 = ()=>{
     const infos=[
         {
             title:'Website Development',
-            icon:<RssFeed className="icon"/>
+            icon:<RssFeed className="icon"/>,
+            delay:"0s"
         },
         {
             title:'Graphic Design',
-            icon:<Layers className="icon"/>
+            icon:<Layers className="icon"/>,
+            delay:"5s"
         },
         {
             title:'Marketing & Reporting',
-            icon:<DesktopMac className="icon"/>
+            icon:<DesktopMac className="icon"/>,
+            delay:'0.4s'
         },
         {
             title:'Mobile Development',
-            icon:<PeopleAlt className="icon"/>
+            icon:<PeopleAlt className="icon"/>,
+            delay:'0.6s'
         },
     ]
     return(

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -13,7 +13,6 @@ import ListItemIcon from '@material-ui/core/ListItemIcon'
 import ListItemText from '@material-ui/core/ListItemText'
 import HomeIcon from '@material-ui/icons/Home';
 import RoomServiceIcon from '@material-ui/icons/RoomService';
-import InfoIcon from '@material-ui/icons/Info';
 import MenuBookIcon from '@material-ui/icons/MenuBook';
 import ViewAgendaIcon from '@material-ui/icons/ViewAgenda';
 import ContactsIcon from '@material-ui/icons/Contacts';
@@ -30,10 +29,9 @@ const useStyles=makeStyles({
     listItem:{
         fontSize:15,
         fontWeight:600,
-        color:'rgba(255,255,255,0.75)',
         transition:'0.3s',
         '&:hover':{
-            color:'#F9004D'
+            color:'#F9004D !important'
         },
     },
     drawerPaper: {
@@ -50,8 +48,11 @@ const useStyles=makeStyles({
     drawerItems:{
         color:'rgba(0,0,0,0.7)',
         '&:hover':{
-            color:'rgba(0,0,0,0.7)'
+            color:'rgba(0,0,0,0.7)',
         },
+    },
+    activeClass:{
+        color:'#F9004D'
     }
 })
 
@@ -59,39 +60,80 @@ const Navbar =(props)=>{
     const classes = useStyles()
     const[drawer,setDrawer]=useState(false)
     const[navbar,setNav]=useState(false)
+    const[activeHome,setActiveHome]=useState('')
+    const[activeServices,setActiveServices]=useState('')
+    const[activeChat,setActiveChat]=useState('')
+    const[activeAxios,setActiveAxios]=useState('')
+    const[activeContact,setActiveContact]=useState('')
+    const[changeActive,setChangeActive]=useState('')
+    useEffect(()=>{
+        if(window.location.pathname==='/'){
+            setActiveHome('#F9004D')
+        }else{
+            setActiveHome('rgba(255,255,255,0.75')
+        }
+        if(window.location.pathname==='/services'){
+            setActiveServices('#F9004D')
+        }else{
+            setActiveServices('rgba(255,255,255,0.75')
+        }
+        if(window.location.pathname==='/chat'){
+            setActiveChat('#F9004D')
+        }else{
+            setActiveChat('rgba(255,255,255,0.75')
+        }
+        if(window.location.pathname==='/axios'){
+            setActiveAxios('#F9004D')
+        }else{
+            setActiveAxios('rgba(255,255,255,0.75')
+        }
+        if(window.location.pathname==='/contact'){
+            setActiveContact('#F9004D')
+        }else{
+            setActiveContact('rgba(255,255,255,0.75')
+        }
+    },[changeActive])
     const menuItems=[
         {
             id:1,
             title:'Home',
             path:'/',
-            icon:<HomeIcon color="primary"/>
+            icon:<HomeIcon color="primary"/>,
+            color: activeHome
         },
         {
             id:2,
             title:'Services',
             path:'/services',
-            icon:<RoomServiceIcon color="primary"/>
+            icon:<RoomServiceIcon color="primary"/>,
+            color:activeServices
         },
        
         {
             id:3,
             title:'Chat',
             path:'/chat',
-            icon:<MenuBookIcon color="primary"/>
+            icon:<MenuBookIcon color="primary"/>,
+            color:activeChat
         },
         {
             id:4,
             title:'Axios',
             path:'/axios',
-            icon:<ViewAgendaIcon color="primary"/>
+            icon:<ViewAgendaIcon color="primary"/>,
+            color:activeAxios
         },
         {
             id:5,
             title:'Contact',
             path:'/contact',
-            icon:<ContactsIcon color="primary"/>
+            icon:<ContactsIcon color="primary"/>,
+            color:activeContact
         },
     ]
+    const activeLink=(path)=>{
+        setChangeActive(path)
+    }
     const closeDrawer=()=>{
         setDrawer(false)
     }
@@ -115,7 +157,7 @@ const Navbar =(props)=>{
                     <ul className="d-md-flex flex-row d-none">
                         {menuItems.map((item)=>(
                             <li key={item.id}>
-                                <Link className={`btn px-3 ${classes.listItem}`} to={item.path}>{item.title}</Link>
+                                <Link className={`mx-3 pb-1 ${classes.listItem}`} style={{color:`${item.color}`}} to={item.path} onClick={()=>activeLink(item.path)}>{item.title}</Link>
                             </li>
                         ))}
                     </ul>
@@ -123,9 +165,7 @@ const Navbar =(props)=>{
                         <MenuIcon />
                     </IconButton>
                 </Toolbar>
-                
             </AppBar>
-            
             <Drawer className={classes.drawer} classes={{ paper: classes.drawerPaper }} anchor="right" open={drawer} onClose={closeDrawer}>
                 <List>
                     {menuItems.map((item)=>(

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 html {
   overflow-x: hidden; }
 
@@ -7,15 +8,15 @@ body, html {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: montserrat, sans-serif;
+  font-family: montserrat, sans-serif !important;
   position: relative; }
 
 a {
   text-decoration: none !important; }
 
 ul {
-  margin: 0;
-  padding: 0; }
+  margin: 0 !important;
+  padding: 0 !important; }
   ul li {
     list-style: none; }
 
@@ -608,11 +609,11 @@ form textarea {
   overflow: hidden; }
 
 .hide {
-  z-index: -99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
+  z-index: -9999999999;
   opacity: 0 !important; }
 
 .show {
-  z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important;
+  z-index: 9999999999;
   opacity: 1 !important; }
 
 .full-page-loading {
@@ -634,7 +635,8 @@ form textarea {
     height: 6px;
     background: #F9004D;
     border-radius: 50%;
-    animation: lds-default 1.2s linear infinite; }
+    animation: lds-default 1.2s linear infinite;
+    box-shadow: 0 0 5px #F9004D, 0 0 10px #F9004D, 0 0 15px #F9004D; }
     .lds-default div:nth-child(1) {
       animation-delay: 0s;
       top: 37px;
@@ -818,7 +820,7 @@ form textarea {
     z-index: -1;
     opacity: 0; }
   .todo-container .zindex {
-    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999;
+    z-index: 99999;
     opacity: 1; }
   .todo-container .update-modal {
     position: fixed;
@@ -863,6 +865,14 @@ form textarea {
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     color: white; }
 
+::-webkit-scrollbar {
+  width: 6px;
+  background: #191919; }
+
+::-webkit-scrollbar-thumb {
+  background: #F9004D;
+  border-radius: 6px; }
+
 .first-container {
   background: #101010 !important; }
 
@@ -872,5 +882,8 @@ form textarea {
 .main-spacing {
   padding-right: 7%;
   padding-left: 7%; }
+
+.hvr-underline-from-left::before {
+  background: #F9004D; }
 
 /*# sourceMappingURL=style.css.map */

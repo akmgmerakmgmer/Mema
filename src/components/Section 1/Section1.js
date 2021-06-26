@@ -42,8 +42,8 @@ const Section1 = ()=>{
         <div className={classes.root}>
             <div className={classes.rootContainer}></div>
             <div className="header1">
-                <h2><span className="digitalTitle">A DIGITAL</span> <br></br><span className="digitalTitle">AGENCY.</span></h2>
-                <Grid className="mt-5" container spacing={5}>
+                <h2 className="wow fadeInDown" data-wow-delay="3s"><span className="digitalTitle">A DIGITAL</span> <br></br><span className="digitalTitle">AGENCY.</span></h2>
+                <Grid className="mt-5 wow fadeInUp" container spacing={5} data-wow-delay="3.3s">
                     {gridItems.map((item)=>(
                         <Grid item md={4} sm={6} xs={12} key={item.title}>
                             <img src={item.icon} alt="Main-Features"/>

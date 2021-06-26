@@ -37,8 +37,8 @@ const Bars1 = ()=>{
             {barItems.map((item)=>(
                 <div key={item.title} className="mb-4">
                     <Typography variant="body1" component="span" color="textSecondary" className="mb-2 text-left d-block">{item.title}</Typography>
-                    <div class="progress">
-                        <div class={`progress-bar ${item.class}`} role="progressbar"  aria-valuenow="25" aria-valuemin="50" aria-valuemax="100"></div>
+                    <div className="progress">
+                        <div className={`progress-bar ${item.class}`} role="progressbar"  aria-valuenow="25" aria-valuemin="50" aria-valuemax="100"></div>
                     </div>
                 </div>
             ))}

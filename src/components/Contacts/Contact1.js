@@ -53,13 +53,17 @@ const Contact1=()=>{
                 <Grid item md={6} sm={12}>
                     <Heading1 component="h5" title="Contact Us" paragraph="I am available for freelance work. Connect with me via phone: 01911111111 or email: admin@example.com"/>
                     <form onSubmit={handleSubmit}>
-                        <TextField label="Your Name*" fullWidth color="secondary" variant="outlined" type="text" onChange={(e)=>setName(e.target.value)} value={name}/>
+                        <label for="name" className="d-none">Name</label>
+                        <TextField id="name" label="Your Name*" fullWidth color="secondary" variant="outlined" type="text" onChange={(e)=>setName(e.target.value)} value={name}/>
                         {nameError==false?<Alert className="mt-3" variant="filled" severity="error">Your Name Shouldn't Be Empty or Less than 4 Letters</Alert>:''}
-                        <TextField label="Your Email*" fullWidth color="secondary" variant="outlined" type="email" className={!nameError?'mt-3':'mt-4'}  onChange={(e)=>setEmail(e.target.value)} value={email}/>
+                        <label for="email" className="d-none">Email</label>
+                        <TextField id="email" label="Your Email*" fullWidth color="secondary" variant="outlined" type="email" className={!nameError?'mt-3':'mt-4'}  onChange={(e)=>setEmail(e.target.value)} value={email}/>
                         {emailError==false?<Alert className="mt-3" variant="filled" severity="error">Please Enter Your Email Correctly</Alert>:''}
-                        <TextField label="Write a Subject*" fullWidth color="secondary" variant="outlined" type="text" className="mt-4" onChange={(e)=>setSubject(e.target.value)} value={subject}/>
+                        <label for="subject" className="d-none">Subject</label>
+                        <TextField id="subject" label="Write a Subject*" fullWidth color="secondary" variant="outlined" type="text" className="mt-4" onChange={(e)=>setSubject(e.target.value)} value={subject}/>
                         {subjectError==false?<Alert className="mt-3" variant="filled" severity="error">Please Don't Leave Your Subject Empty</Alert>:''}
-                        <TextField multiline rows="7" label="Your Message*" fullWidth color="secondary" variant="outlined" type="text" className="mt-4" onChange={(e)=>setMessage(e.target.value)} value={message}/>
+                        <label for="textarea" className="d-none">Textarea</label>
+                        <TextField id="textarea" multiline rows="7" label="Your Message*" fullWidth color="secondary" variant="outlined" type="text" className="mt-4" onChange={(e)=>setMessage(e.target.value)} value={message}/>
                         {messageError==false?<Alert className="mt-3" variant="filled" severity="error">Please Don't Leave Your Message Empty</Alert>:''}
                         <button className="mt-4 project-button">Send Message</button>
                         <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>

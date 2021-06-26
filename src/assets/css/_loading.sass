@@ -53,10 +53,10 @@
   max-height: 100vh 
   overflow: hidden
 .hide
-  z-index: -99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important
+  z-index: -9999999999
   opacity: 0 !important
 .show
-  z-index: 99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999 !important
+  z-index: 9999999999
   opacity: 1 !important
 .full-page-loading
   position: fixed
@@ -75,6 +75,7 @@
     background: $main-color
     border-radius: 50%
     animation: lds-default 1.2s linear infinite
+    box-shadow: 0 0 5px $main-color, 0 0 10px $main-color, 0 0 15px $main-color
     &:nth-child(1)
       animation-delay: 0s
       top: 37px
