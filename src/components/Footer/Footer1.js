@@ -1,10 +1,11 @@
+import { Typography } from '@material-ui/core';
 import { Instagram, LinkedIn, Twitter } from '@material-ui/icons';
 import FacebookIcon from '@material-ui/icons/Facebook';
-const Footer1 = ()=>(
+const Footer1 = (props)=>(
     <div className="first-container py-4 footer1">
         <div className="row text-lg-center">
             <div className="col-lg-4 col-md-6 col-xs-12 text-left padding-left">
-                <h6>Mema.</h6>
+                <Typography component={props.component} className="footer-title">Mema.</Typography>
             </div>
             <div className="col-lg-4 col-md-6 col-xs-12 icons-container mt-md-0 mt-2">
                 <div className="icons d-inline-block ml-2 mr-2">

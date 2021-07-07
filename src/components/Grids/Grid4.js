@@ -1,8 +1,10 @@
+import React, { lazy,Suspense  } from 'react';
 import { useState , useEffect } from 'react'
 import axios from 'axios'
-import Todo from '../Reusable/Todo'
-import TodoForm from '../Reusable/TodoForm'
-import CompletedTodos from '../Reusable/CompletedTodos'
+import FullPageLoading from '../Loadings/FullPageLoading';
+const Todo = lazy(() => import('../Reusable/Todo'));
+const TodoForm = lazy(() => import('../Reusable/TodoForm'));
+const CompletedTodos = lazy(() => import('../Reusable/CompletedTodos'));
 const Grid4 = () =>{
     const [todoList,setTodoList]=useState([])
     const [todo,setTodo]=useState('')
@@ -55,17 +57,17 @@ const Grid4 = () =>{
             value:todo,
             title:todoTitle,
         }
-        if(todo==''){
+        if(todo.trim()==''){
             setTodoError(true)
         }else{
             setTodoError(false)
         }
-        if(todoTitle==''){
+        if(todoTitle.trim()==''){
             setTodoTitleError(true)
         }else{
             setTodoTitleError(false)
         }
-        if(todo!='' && todoTitle!=''){
+        if(todo.trim()!='' && todoTitle.trim()!=''){
             setLoading(true)
             axios.post('https://chat-9ebf3-default-rtdb.firebaseio.com/todos.json',todoTasks)
                 .then(response=>{
@@ -96,17 +98,17 @@ const Grid4 = () =>{
             value:updateTodo,
             title:updateTitle
         }
-        if(updateTodo==''){
+        if(updateTodo.trim()==''){
             setUpdateTodoError(true)
         }else{
             setUpdateTodoError(false)
         }
-        if(updateTitle==''){
+        if(updateTitle.trim()==''){
             setUpdateTitleError(true)
         }else{
             setUpdateTitleError(false)
         }
-        if(updateTodo!='' && updateTitle!=''){
+        if(updateTodo.trim()!='' && updateTitle.trim()!=''){
             setModalClass('zminus')
             setLoading(true)
             axios.put(`https://chat-9ebf3-default-rtdb.firebaseio.com/todos/${modalId}.json`,updatedTodo)
@@ -168,7 +170,7 @@ const Grid4 = () =>{
     }
     return(
         <div className="first-container py-5 text-white todo-container">
-            <div className="w-100">
+            <Suspense fallback={FullPageLoading} className="w-100">
                 <TodoForm
                 titleInput={(e)=>setTodoTitle(e.target.value)}
                 title={todoTitle}
@@ -201,7 +203,7 @@ const Grid4 = () =>{
                 loading3={loading3}
                 returnTodo={ReturnTodo}
                 />
-            </div>
+            </Suspense>
         </div>
     )
 }

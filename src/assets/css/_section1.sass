@@ -6,8 +6,19 @@
     z-index: 1
     .grid-p
         color: rgba(255,255,255,0.45)
+    .img1
+        height: 61px
+        width: 75px
+    .img2
+        height: 61px
+        width: 54px
+    .img3
+        height: 61px
+        width: 41px
 .digitalTitle
+    @include animator(backgroundanimation4,1.3s,ease-in-out,0s,forwards)
     color: white
+    display: inline-block
     font-size: 92px
     background: -webkit-linear-gradient(rgb(247,29,10) 0%,rgb(239,11,90) 80%)
     -webkit-background-clip: text

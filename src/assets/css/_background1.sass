@@ -1,8 +1,13 @@
 .overlay-color
     background: rgba(16, 16, 16, 0.65)
+.title-background
+    @include animator(backgroundanimation,1.3s,ease-in-out,0s,forwards)
 .background1-p
     color: rgba(255, 255, 255, 0.73)
+    @include animator(backgroundanimation2,1.3s,ease-in-out,0s,forwards)
+    opacity: 0
 .contact-button
+    @include animator(backgroundanimation3,1.3s,ease-in-out,0s,forwards)
     background: transparent 
     color: white 
     @include  transition(all, 0.3s, ease-in-out)
@@ -14,5 +19,7 @@
     letter-spacing: 3px
     text-transform: uppercase
     &:hover
+        transform: translateY(-8px)
         background: $main-color
         border: 1px solid $main-color
+

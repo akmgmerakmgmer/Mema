@@ -1,3 +1,4 @@
+import 'hover.css'
 import GridItems from '../Reusable/GridItems'
 import { DesktopMac, Layers, PeopleAlt, RssFeed } from "@material-ui/icons";
 import Heading1 from '../Headings/Heading1';

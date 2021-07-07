@@ -1,12 +1,7 @@
 import './App.css';
-import 'hover.css'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import 'animate.css'
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
 import '../src/assets/css/style.css'
-import WOW from 'wowjs'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbars/Navbar1'
@@ -16,7 +11,7 @@ import Chat from './pages/Chat'
 import Axios from './pages/Axios'
 import Contact from './pages/Contact'
 import FullPageLoading from './components/Loadings/FullPageLoading';
-import { useEffect } from 'react';
+import ScrollToTop from './components/ScrollTop/ScrollTop';
 const theme = createMuiTheme({
   palette:{
     primary:{
@@ -39,33 +34,31 @@ const theme = createMuiTheme({
 })
 
 function App() {
-  useEffect(()=>{
-    new WOW.WOW({
-    }).init();
-  },[])
   return(
     <Router>
       <ThemeProvider theme={theme}>
-      <FullPageLoading>
-        <Navbar className="h-100">
-          <Switch>
-              <Route exact path="/">
-                <Home/>                
-              </Route>
-              <Route exact path="/services">
-                <Services/>
-              </Route>
-              <Route exact path="/chat">
-                <Chat/>
-              </Route>
-              <Route exact path="/axios">
-                <Axios/>
-              </Route>
-              <Route exact path="/contact">
-                <Contact/>
-              </Route>
-          </Switch>
-        </Navbar>
+        <FullPageLoading>
+          <Navbar className="h-100">
+            <ScrollToTop>
+              <Switch>
+                  <Route exact path="/">
+                    <Home/>                
+                  </Route>
+                  <Route exact path="/services">
+                    <Services/>
+                  </Route>
+                  <Route exact path="/chat">
+                    <Chat/>
+                  </Route>
+                  <Route exact path="/axios">
+                    <Axios/>
+                  </Route>
+                  <Route exact path="/contact">
+                    <Contact/>
+                  </Route>
+              </Switch>
+            </ScrollToTop>
+          </Navbar>
         </FullPageLoading>
       </ThemeProvider>
     </Router>

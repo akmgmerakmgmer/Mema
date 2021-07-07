@@ -1,15 +1,18 @@
-import Contact1 from '../components/Contacts/Contact1'
-import Background3 from '../components/Backgrounds/Background3'
-import Contact2 from '../components/Contacts/Contact2'
-import Footer1 from '../components/Footer/Footer1'
+import React, { lazy,Suspense  } from 'react';
+import FullPageLoading from '../components/Loadings/FullPageLoading';
+const Contact1 = lazy(() => import('../components/Contacts/Contact1'));
+const Background3 = lazy(() => import('../components/Backgrounds/Background3'));
+const Contact2 = lazy(() => import('../components/Contacts/Contact2'));
+const Footer1 = lazy(() => import('../components/Footer/Footer1'));
+
 const Contact = ()=>{
     return(
-        <div>
+        <Suspense fallback={FullPageLoading}>
             <Background3/>
-            <Contact2/>
-            <Contact1/>
-            <Footer1/>
-        </div>
+            <Contact2 component="h2"/>
+            <Contact1 component="h3"/>
+            <Footer1 component="h4"/>
+        </Suspense>
     )
 }
 

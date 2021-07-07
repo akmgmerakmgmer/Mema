@@ -1,3 +1,5 @@
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import { Typography } from "@material-ui/core";
 import React, { Component } from "react";
 import Heading1 from '../Headings/Heading1'

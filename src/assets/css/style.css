@@ -3,7 +3,6 @@ html {
   overflow-x: hidden; }
 
 body, html {
-  scroll-behavior: smooth;
   overflow-x: hidden;
   padding: 0;
   margin: 0;
@@ -285,15 +284,34 @@ button {
   font-weight: 400;
   src: local("Pacifico Regular"), local("Pacifico-Regular"), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format("woff2");
   font-display: swap; }
-.background-main {
-  background: white !important;
-  color: black !important; }
-
-@keyframes text-animation {
+@keyframes backgroundanimation {
   0% {
-    padding-left: 55px; }
+    opacity: 0;
+    transform: translateX(-100%); }
   100% {
-    padding-left: 0px; } }
+    opacity: 1;
+    transform: translateX(0px); } }
+@keyframes backgroundanimation2 {
+  0% {
+    opacity: 0;
+    transform: translateX(100%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+@keyframes backgroundanimation3 {
+  0% {
+    opacity: 0;
+    transform: translateY(100%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
+@keyframes backgroundanimation4 {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%); }
+  100% {
+    opacity: 1;
+    transform: translateX(0px); } }
 .headings-title {
   font-size: 46px !important;
   font-weight: 800 !important; }
@@ -315,9 +333,23 @@ button {
   z-index: 1; }
   .header1 .grid-p {
     color: rgba(255, 255, 255, 0.45); }
+  .header1 .img1 {
+    height: 61px;
+    width: 75px; }
+  .header1 .img2 {
+    height: 61px;
+    width: 54px; }
+  .header1 .img3 {
+    height: 61px;
+    width: 41px; }
 
 .digitalTitle {
+  -webkit-animation: backgroundanimation4 1.3s ease-in-out 0s forwards;
+  -moz-animation: backgroundanimation4 1.3s ease-in-out 0s forwards;
+  -o-animation: backgroundanimation4 1.3s ease-in-out 0s forwards;
+  animation: backgroundanimation4 1.3s ease-in-out 0s forwards;
   color: white;
+  display: inline-block;
   font-size: 92px;
   background: -webkit-linear-gradient(#f71d0a 0%, #ef0b5a 80%);
   -webkit-background-clip: text;
@@ -469,10 +501,25 @@ form textarea {
 .overlay-color {
   background: rgba(16, 16, 16, 0.65); }
 
+.title-background {
+  -webkit-animation: backgroundanimation 1.3s ease-in-out 0s forwards;
+  -moz-animation: backgroundanimation 1.3s ease-in-out 0s forwards;
+  -o-animation: backgroundanimation 1.3s ease-in-out 0s forwards;
+  animation: backgroundanimation 1.3s ease-in-out 0s forwards; }
+
 .background1-p {
-  color: rgba(255, 255, 255, 0.73); }
+  color: rgba(255, 255, 255, 0.73);
+  -webkit-animation: backgroundanimation2 1.3s ease-in-out 0s forwards;
+  -moz-animation: backgroundanimation2 1.3s ease-in-out 0s forwards;
+  -o-animation: backgroundanimation2 1.3s ease-in-out 0s forwards;
+  animation: backgroundanimation2 1.3s ease-in-out 0s forwards;
+  opacity: 0; }
 
 .contact-button {
+  -webkit-animation: backgroundanimation3 1.3s ease-in-out 0s forwards;
+  -moz-animation: backgroundanimation3 1.3s ease-in-out 0s forwards;
+  -o-animation: backgroundanimation3 1.3s ease-in-out 0s forwards;
+  animation: backgroundanimation3 1.3s ease-in-out 0s forwards;
   background: transparent;
   color: white;
   -webkit-transition: all 0.3s ease-in-out;
@@ -486,6 +533,7 @@ form textarea {
   letter-spacing: 3px;
   text-transform: uppercase; }
   .contact-button:hover {
+    transform: translateY(-8px);
     background: #F9004D;
     border: 1px solid #F9004D; }
 
@@ -699,20 +747,20 @@ form textarea {
     @media (max-width: 575.98px) {
       .contact2-background span {
         font-size: 14px; } }
-  .contact2-background h6 {
+  .contact2-background .work {
     font-size: 75px;
     font-weight: 900; }
     @media (max-width: 575.98px) {
-      .contact2-background h6 {
+      .contact2-background .work {
         font-size: 38px; } }
     @media (min-width: 576px) and (max-width: 767.98px) {
-      .contact2-background h6 {
+      .contact2-background .work {
         font-size: 42px; } }
     @media (min-width: 768px) and (max-width: 991.98px) {
-      .contact2-background h6 {
+      .contact2-background .work {
         font-size: 48px; } }
     @media (min-width: 992px) and (max-width: 1199.98px) {
-      .contact2-background h6 {
+      .contact2-background .work {
         font-size: 52px; } }
   .contact2-background button {
     border: 2px solid white;
@@ -759,14 +807,14 @@ form textarea {
   .footer1 p {
     font-weight: 600;
     padding-right: 5%; }
-  .footer1 h6 {
+  .footer1 .footer-title {
     font-size: 38px;
     font-weight: 900; }
     @media (max-width: 575.98px) {
-      .footer1 h6 {
+      .footer1 .footer-title {
         font-size: 30px; } }
     @media (min-width: 576px) and (max-width: 767.98px) {
-      .footer1 h6 {
+      .footer1 .footer-title {
         font-size: 34px; } }
   .footer1 .icons-container {
     padding-right: 4%; }
@@ -865,9 +913,25 @@ form textarea {
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
     color: white; }
 
+.grid5 {
+  margin-bottom: -50px; }
+  @media (max-width: 575.98px) {
+    .grid5 {
+      margin-bottom: -20px; } }
+  @media (min-width: 576px) and (max-width: 767.98px) {
+    .grid5 {
+      margin-bottom: -20px; } }
+  .grid5 span {
+    font-weight: 400; }
+  .grid5 h2 {
+    font-weight: 900; }
+  .grid5 p {
+    letter-spacing: 1.8px;
+    line-height: 21px; }
+
 ::-webkit-scrollbar {
   width: 6px;
-  background: #191919; }
+  background: #101010; }
 
 ::-webkit-scrollbar-thumb {
   background: #F9004D;
@@ -882,8 +946,5 @@ form textarea {
 .main-spacing {
   padding-right: 7%;
   padding-left: 7%; }
-
-.hvr-underline-from-left::before {
-  background: #F9004D; }
 
 /*# sourceMappingURL=style.css.map */

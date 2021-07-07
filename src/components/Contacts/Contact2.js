@@ -11,13 +11,13 @@ const useStyles= makeStyles({
     }
     
 })
-const Contact2=()=>{
+const Contact2=(props)=>{
     const classes = useStyles()
     return(
         <Box className={classes.back}>
             <div className="main-spacing content-center text-white text-center contact2-background">
                 <Typography variant="body1" component="span">Ready To Do This</Typography>
-                <h6 className="mt-3 mb-3">Let's get to work</h6>
+                <Typography component={props.component} className="mt-3 work">Let's get to work</Typography>
                 <Link to="/chat"><button className="mt-4">Chat With Us</button></Link>
             </div>
         </Box>

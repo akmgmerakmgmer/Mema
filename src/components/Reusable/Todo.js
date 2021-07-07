@@ -1,4 +1,3 @@
-
 import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import {Typography,TextField } from '@material-ui/core'
@@ -33,9 +32,11 @@ const Todo =(props)=>{
             ))}
             <div className='d-flex justify-content-center align-items-center'>
                 <div className={`update-modal ${props.modalClass}`}>
-                    <TextField fullWidth label="New Title*" color="secondary" type="text" className="mb-3" onChange={props.updatedTitle} value={props.titleUpdated}/>
+                    <label for="newTitle" className="d-none">Name</label>
+                    <TextField id="newTitle" fullWidth label="New Title*" color="secondary" type="text" className="mb-3" onChange={props.updatedTitle} value={props.titleUpdated}/>
                     {props.titleError?<Alert variant="filled" severity="error">Your Title Can't Be Empty</Alert>:null}
-                    <TextField fullWidth label="New Task*" color="secondary" type="text" className="mt-2 mb-3" onChange={props.updatedTodo} value={props.todoUpdated}/>
+                    <label for="newTask" className="d-none">Name</label>
+                    <TextField id="newTask" fullWidth label="New Task*" color="secondary" type="text" className="mt-2 mb-3" onChange={props.updatedTodo} value={props.todoUpdated}/>
                     {props.todoError?<Alert variant="filled" severity="error">Your Title Can't Be Empty</Alert>:null}
                     <button className="default-button project-button mt-4" onClick={props.update}>Update Todo</button>
                 </div>

@@ -18,7 +18,6 @@ $secondery-color: rgba(255,255,255,0.75)
 html
   overflow-x: hidden
 body,html
-  scroll-behavior: smooth
   overflow-x: hidden
   padding: 0
   margin: 0
@@ -233,12 +232,32 @@ button
   font-weight: 400
   src: local('Pacifico Regular'), local('Pacifico-Regular'), url(https://fonts.gstatic.com/s/pacifico/v12/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2) format('woff2')
   font-display: swap
-.background-main
-  background: white !important
-  color: black !important
-@keyframes text-animation
-  0%
-    padding-left: 55px
-  100%
-    padding-left: 0px
 
+@keyframes backgroundanimation
+    0%
+        opacity: 0
+        transform: translateX(-100%)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+@keyframes backgroundanimation2
+    0%
+        opacity: 0
+        transform: translateX(100%)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+@keyframes backgroundanimation3
+    0%
+        opacity: 0
+        transform: translateY(100%)
+    100%
+        opacity: 1
+        transform: translateX(0px)
+@keyframes backgroundanimation4
+    0%
+        opacity: 0
+        transform: translateY(-100%)
+    100%
+        opacity: 1
+        transform: translateX(0px)

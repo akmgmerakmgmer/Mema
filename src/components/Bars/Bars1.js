@@ -33,12 +33,12 @@ const Bars1 = ()=>{
     ]
     return(
         <div className="first-container text-center py-5 main-spacing bars1">
-            <Heading1 component="h2" title="Our Team Features" paragraph="There are many variations of passages of Lorem Ipsum available,but the majority have suffered alteration."/>
+            <Heading1 component="h3" title="Our Team Features" paragraph="There are many variations of passages of Lorem Ipsum available,but the majority have suffered alteration."/>
             {barItems.map((item)=>(
                 <div key={item.title} className="mb-4">
                     <Typography variant="body1" component="span" color="textSecondary" className="mb-2 text-left d-block">{item.title}</Typography>
                     <div className="progress">
-                        <div className={`progress-bar ${item.class}`} role="progressbar"  aria-valuenow="25" aria-valuemin="50" aria-valuemax="100"></div>
+                        <div className={`progress-bar ${item.class}`} role="progressbar"  aria-valuenow="25" aria-valuemin="50" aria-valuemax="100" aria-label={item.title}></div>
                     </div>
                 </div>
             ))}

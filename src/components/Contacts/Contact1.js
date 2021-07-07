@@ -3,7 +3,7 @@ import Alert from '@material-ui/lab/Alert'
 import Heading1 from '../Headings/Heading1'
 import image from '../../assets/images/about-9.jpg'
 import { useState } from "react"
-const Contact1=()=>{
+const Contact1=(props)=>{
     const [name,setName]= useState('')
     const [email,setEmail]= useState('')
     const [subject,setSubject]= useState('')
@@ -15,28 +15,28 @@ const Contact1=()=>{
     const [open,setOpen]= useState(false)
     const handleSubmit=(e)=>{
         e.preventDefault()
-        if(name==='' || name.length<4) {
+        if(name.trim()==='' || name.trim().length<4) {
             setNameError(false)
         }else{
             setNameError(true)
         }
-        if(email==='' || !email.includes('@') || !email.includes('.com')) {
+        if(email.trim()==='' || !email.trim().includes('@') || !email.trim().includes('.com')) {
             setEmailError(false)
         }else{
             setEmailError(true)
         }
-        if(message==='') {
+        if(message.trim()==='') {
             setMessageError(false)
         }else{
             setMessageError(true)
         }
-        if(subject==='') {
+        if(subject.trim()==='') {
             setSubjectError(false)
         }else{
             setSubjectError(true)
         }
         /*console.log(email,nameError,emailError,subjectError,messageError)*/
-        if(name!='' && !name.length<4 && email !='' && email.includes('@') && email.includes('.com') && subject!='' && message!=''){
+        if(name.trim()!='' && name.trim().length>4 && email.trim() !='' && email.trim().includes('@') && email.trim().includes('.com') && subject.trim()!='' && message.trim()!=''){
             setOpen(true)
             setName('')
             setEmail('')
@@ -51,7 +51,7 @@ const Contact1=()=>{
         <Box className="first-container main-spacing py-md-5 py-3 text-white">
             <Grid container direction="row" justify="flex-end" spacing={4}>
                 <Grid item md={6} sm={12}>
-                    <Heading1 component="h5" title="Contact Us" paragraph="I am available for freelance work. Connect with me via phone: 01911111111 or email: admin@example.com"/>
+                    <Heading1 component={props.component} title="Contact Us" paragraph="I am available for freelance work. Connect with me via phone: 01911111111 or email: admin@example.com"/>
                     <form onSubmit={handleSubmit}>
                         <label for="name" className="d-none">Name</label>
                         <TextField id="name" label="Your Name*" fullWidth color="secondary" variant="outlined" type="text" onChange={(e)=>setName(e.target.value)} value={name}/>

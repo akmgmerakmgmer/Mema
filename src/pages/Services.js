@@ -1,18 +1,23 @@
 
-import Background1 from '../components/Backgrounds/Background1'
-import Bars1 from '../components/Bars/Bars1'
-import Grid3 from '../components/Grids/Grid3'
-import Contact2 from '../components/Contacts/Contact2'
-import Footer1 from '../components/Footer/Footer1'
+import React, { lazy,Suspense  } from 'react';
+import FullPageLoading from '../components/Loadings/FullPageLoading';
+const Background1 = lazy(() => import('../components/Backgrounds/Background1'));
+const Bars1 = lazy(() => import('../components/Bars/Bars1'));
+const Grid3 = lazy(() => import('../components/Grids/Grid3'));
+const Contact2 = lazy(() => import('../components/Contacts/Contact2'));
+const Footer1 = lazy(() => import('../components/Footer/Footer1'));
+const Grid5 = lazy(() => import('../components/Grids/Grid5'));
+
 const Services = ()=>{
     return(
-        <div>
+        <Suspense fallback={FullPageLoading}>
             <Background1/>
-            <Bars1/>
+            <Grid5/>
             <Grid3/>
-            <Contact2/>
-            <Footer1/>
-        </div>
+            <Bars1/>         
+            <Contact2 component="h4"/>
+            <Footer1 component="h5"/>
+        </Suspense>
     )
 }
 

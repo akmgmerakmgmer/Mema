@@ -6,8 +6,10 @@ const TodoForm = (props)=>{
     return(
         <div>
             <Heading1 component="h2" title="Axios To Do List" paragraph="There are many variations of passages of Lorem Ipsum available,but the majority have suffered alteration."/>
-            <TextField label="Title*" color="secondary" type="text" className="pt-1 w-50 pr-4" onChange={props.titleInput} value={props.title}/>
-            <TextField label="Task*" color="secondary" type="text" className="pt-1 w-50 pr-4" onChange={props.todoInput} value={props.todo}/>
+            <label for="title" className="d-none">Name</label>
+            <TextField id="title" label="Title*" color="secondary" type="text" className="pt-1 w-50 pr-4" onChange={props.titleInput} value={props.title}/>
+            <label for="task" className="d-none">Name</label>
+            <TextField id="task" label="Task*" color="secondary" type="text" className="pt-1 w-50 pr-4" onChange={props.todoInput} value={props.todo}/>
             {props.error!==null?<Alert className="mt-3" variant="filled" severity="error">Error Fetching Your Data</Alert>:''}
             <div className="d-flex">
                 {props.titleError==true?<Alert className="mt-3 w-50 mr-4" icon={false} variant="filled" severity="error">Your Title Can't Be Empty</Alert>:<div className="w-50 mr-4"></div>}

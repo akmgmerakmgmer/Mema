@@ -1,0 +1,19 @@
+.loading-title
+  font-size: 70px
+  font-weight: 900
+  color: $main-color
+  position: relative
+  letter-spacing: 5px
+  &:hover
+    &::after
+      left: 0%
+      width: 100%
+  &::after
+    position: absolute
+    content: ''
+    width: 35%
+    height: 7px
+    background: $main-color
+    bottom: 0
+    left: 30%
+    transition: 0.3s
