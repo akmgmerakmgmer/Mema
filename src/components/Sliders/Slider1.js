@@ -5,7 +5,7 @@ import React, { Component } from "react";
 import Heading1 from '../Headings/Heading1'
 import Slider from "react-slick";
 import image2 from '../../assets/images/portfolio-4.jpg'
-import image5 from '../../assets/images/portfolio-7.jpg'
+import image5 from '../../assets/images/portfolio-8.jpg'
 
 export default class Responsive extends Component {
   render() {

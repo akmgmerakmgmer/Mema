@@ -3,9 +3,6 @@ import Heading1 from '../Headings/Heading1'
 import Grid1 from '../Grids/Grid1'
 import image1 from '../../assets/images/portfolio-2.jpg'
 import image2 from '../../assets/images/portfolio-4.jpg'
-import image3 from '../../assets/images/portfolio-3.jpg'
-import image4 from '../../assets/images/portfolio-4.jpg'
-import image5 from '../../assets/images/portfolio-7.jpg'
 import image6 from '../../assets/images/portfolio-8.jpg'
 const Section2 = ()=>{
     const images=[
@@ -19,19 +16,19 @@ const Section2 = ()=>{
         },
         {
             id:3,
-            img:image3
+            img:image6
         },
         {
             id:4,
-            img:image4
+            img:image6
         },
         {
             id:5,
-            img:image5
+            img:image1
         },
         {
             id:6,
-            img:image6
+            img:image2
         },
     ]
     return(

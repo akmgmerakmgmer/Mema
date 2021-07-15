@@ -4,7 +4,9 @@ import Heading1 from "../Headings/Heading1"
 import { Link } from 'react-router-dom';
 import GridItems from '../Reusable/GridItems'
 import { DesktopMac, Layers, PeopleAlt, RssFeed } from "@material-ui/icons";
+import { useState } from 'react';
 const Grid2 = ()=>{
+    const [c,setC]= useState(true)
     const infos=[
         {
             title:'Website Development',

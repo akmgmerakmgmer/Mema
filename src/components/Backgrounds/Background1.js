@@ -1,6 +1,6 @@
 import { Box, makeStyles } from "@material-ui/core"
 import BackgroundContent from '../Reusable/BackgroundContent'
-import background from '../../assets/images/bg-image-26.jpg'
+import background from '../../assets/images/bg-video1.jpg'
 const useStyles= makeStyles({
     back:{
         background:`url(${background})`,
